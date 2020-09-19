@@ -1,0 +1,160 @@
+/**
+   ---------------------------------------------------------------------------------------------------------------------
+   Regles CSS communes a tous les noeuds, sur la page, et sur le corps de la page.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial sans-serif;
+    font-size: 14px;
+    z-index: 0;
+}
+
+html {
+    background: lightgray;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+/**
+   ---------------------------------------------------------------------------------------------------------------------
+   Regles CSS du plateau.
+ */
+#board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.black-tile, .white-tile {
+    border: 1px solid gray;
+}
+
+.black-tile {
+    background-color: black;
+}
+
+.white-tile {
+    background-color: white;
+}
+
+
+
+/**
+   Regles CSS pour le numero de generation.
+ */
+#num-generation {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    box-shadow: 0 0 30px red;
+    background: rgba(255,0,0, 0.5);
+    padding: 10px;
+    border-radius: 20px;
+    top: 10px;
+    left: 10px;
+}
+
+
+
+/**
+   ---------------------------------------------------------------------------------------------------------------------
+   Regles CSS du gestionnaire du plateau.
+ */
+#board-manager {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+}
+
+.board-manager {
+    background-color: white;
+    width: 200px;
+    padding: 20px 20px 10px 20px;
+    box-shadow: 0 0 30px blue;
+    border-radius: 10px;
+}
+
+.board-manager-closed {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    box-shadow: 0 0 30px blue;
+    border-radius: 40px;
+    background: rgba(10, 149, 237, 0.5);
+    color: white;
+    cursor: pointer;
+}
+
+.board-manager-closed:before {
+    content: "+";
+    padding-top:  12px;
+    text-align: center;
+}
+
+.board-manager-closed > * {
+    visibility: hidden;
+}
+
+.board-manager-moved {
+    box-shadow: 0 0 70px red;
+    cursor: move;
+}
+
+.board-manager-moved  > * {
+    pointer-events: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#board-manager > input, button {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+}
+
+#board-manager > input:disabled, #board-manager > button:disabled  {
+    background-color: lightgray;
+    color: gray;
+}
+
+#board-manager > button {
+    border: 0;
+}
+
+#board-manager > button:not(:disabled) {
+    background-color: cornflowerblue;
+    box-shadow: 0 0 7px black;
+    color: white;
+    cursor: pointer;
+}
+
+#board-manager > button:not(:disabled):hover {
+    box-shadow: 0 0 20px blue;
+}
+
+#board-manager > hr {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#close-button {
+    margin: 0 0 10px 170px;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+#board-manager > input:invalid  {
+    border: 1px solid red;
+}

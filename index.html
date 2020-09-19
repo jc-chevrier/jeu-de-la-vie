@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jeu de la vie</title>
+        <script src="./lib/jquery-3.5.0.min.js"></script>
+        <script src="./src/index.js"></script>
+        <link href="./src/index.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body style="visibility: hidden">
+        <div id="board">
+            <!-- CONSTRUCTION DU PLATEAU DYNAMIQUEMENT EN JS. -->
+        </div>
+        <div id="num-generation" style="visibility: hidden">0</div>
+        <div id="board-manager" class="board-manager">
+            <button id="close-button">-</button>
+            <hr>
+            <label>Largeur du plateau (en pixels) :</label>
+            <input type="number" min="0" step="1" disabled id="input-board-width">
+            <label>Hauteur du plateau (en pixels) :</label>
+            <input type="number" min="0" step="1" disabled id="input-board-height">
+            <label>Côté des tuiles (en pixels) :</label>
+            <input type="number" min="0" step="1" value="11" id="input-board-size-tile">
+            <label>Nombre de tuiles :</label>
+            <input type="number" min="0" step="1" value="5250" id="input-board-nb-tiles">
+            <label>Temps entre générations (en millisecondes):</label>
+            <input type="number" min="0" step="1" value="50" id="input-board-time-between-generations">
+            <hr>
+            <button id="reset-button">Générer le plateau</button>
+            <button id="run-button" disabled>Démarrer l'évolution</button>
+            <button id="stop-button" disabled>Arrêter l'évolution</button>
+            <button id="load-button">Charger un plateau (.json)</button>
+            <button id="save-button" disabled>Enregistrer le plateau (.json)</button>
+        </div>
+    </body>
+</html>
